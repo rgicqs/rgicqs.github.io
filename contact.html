@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Green City Simulator</title>
+    <style>
+        /* Styles CSS de base (identiques aux autres pages pour la cohérence) */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #4CAF50; /* Vert cohérent avec le thème */
+            color: white;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            text-align: center;
+        }
+        .navbar a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .navbar a:hover {
+            background-color: #575757;
+            color: white;
+        }
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 30px;
+        }
+        /* Styles spécifiques au formulaire de contact */
+        .contact-form {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: calc(100% - 22px); /* Ajuster la largeur en tenant compte du padding et bordure */
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; /* Inclure padding et bordure dans la largeur */
+        }
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .contact-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        .contact-form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>Green City Simulator</h1>
+        <p>Le jeu de société collaboratif du développement durable</p>
+    </header>
+
+    <nav class="navbar">
+        <a href="index.html">Accueil</a>
+        <a href="about.html">À Propos du Jeu</a>
+        <a href="how-to-play.html">Comment Jouer</a>
+        <a href="buy.html">Acheter</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+        <h2>Contactez-nous</h2>
+        <p>Avez-vous des questions, des suggestions, ou souhaitez-vous simplement nous dire bonjour ? Nous serions ravis d'avoir de vos nouvelles !</p>
+
+        <div class="contact-form">
+            <form action="#" method="post"> <!-- Le formulaire ne soumettra rien sans backend -->
+                <label for="name">Votre Nom :</label>
+                <input type="text" id="name" name="user_name" required>
+
+                <label for="email">Votre E-mail :</label>
+                <input type="email" id="email" name="user_email" required>
+
+                <label for="message">Votre Message :</label>
+                <textarea id="message" name="user_message" required></textarea>
+
+                <button type="submit">Envoyer le message</button>
+            </form>
+        </div>
+
+        <h3>Informations Générales</h3>
+        <p>Pour toute question générale ou partenariat, n'hésitez pas à nous écrire à :</p>
+        <p><strong>contact@greencitysimulator.com</strong> (adresse fictive pour le moment)</p>
+
+        <h3>Suivez-nous</h3>
+        <p>Retrouvez-nous sur les réseaux sociaux pour les dernières nouvelles et mises à jour :</p>
+        <p>
+            <!-- Ces liens sont des placeholders, tu pourras les remplacer par tes vrais liens sociaux -->
+            <a href="#" target="_blank" style="margin-right: 15px; text-decoration: none; color: #2196F3;">Facebook</a>
+            <a href="#" target="_blank" style="margin-right: 15px; text-decoration: none; color: #2196F3;">Twitter</a>
+            <a href="#" target="_blank" style="text-decoration: none; color: #2196F3;">Instagram</a>
+        </p>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2023 Green City Simulator. Tous droits réservés.</p>
+        <p>Fait avec passion par l'équipe de Green City Simulator.</p>
+    </footer>
+
+</body>
+</html>
