@@ -1,74 +1,119 @@
-<style>
-    /* Styles CSS de base pour un affichage simple */
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-        color: #333;
-        line-height: 1.6;
-    }
-    .header {
-        text-align: center;
-        padding: 20px;
-        background-color: #4CAF50; /* Vert cohérent avec le thème */
-        color: white;
-    }
-    .navbar {
-        background-color: #333;
-        overflow: hidden;
-        text-align: center;
-    }
-    .navbar a {
-        display: inline-block;
-        color: white;
-        text-align: center;
-        padding: 14px 20px;
-        text-decoration: none;
-        font-weight: bold;
-    }
-    .navbar a:hover {
-        background-color: #575757;
-        color: white;
-    }
-    .hero-banner {
-        width: 100%;
-        height: 500px; /* Hauteur fixe pour la bannière */
-        background-image: url('/hero-banner.png'); /* Chemin vers l'image locale */
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        overflow: hidden;
-    }
-    .container {
-        max-width: 960px;
-        margin: 20px auto;
-        padding: 20px;
-        background-color: white;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-    }
-    .button {
-        display: inline-block;
-        background-color: #2196F3; /* Bleu pour les boutons d'action */
-        color: white;
-        padding: 10px 20px;
-        text-decoration: none;
-        border-radius: 5px;
-        margin: 10px 5px;
-        transition: background-color 0.3s ease;
-    }
-    .button:hover {
-        background-color: #0d8cdb;
-    }
-    .footer {
-        text-align: center;
-        padding: 20px;
-        background-color: #333;
-        color: white;
-        margin-top: 30px;
-    }
-</style>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green City Simulator - Le jeu de société collaboratif du développement durable</title>
+    <style>
+        /* Styles CSS de base pour un affichage simple */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #4CAF50; /* Vert cohérent avec le thème */
+            color: white;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            text-align: center;
+        }
+        .navbar a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .navbar a:hover {
+            background-color: #575757;
+            color: white;
+        }
+        .hero-banner {
+            width: 100%;
+            height: 500px; /* Hauteur fixe pour la bannière */
+            background-image: url('/hero-banner.png'); /* Chemin vers l'image locale */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #2196F3; /* Bleu pour les boutons d'action */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 5px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0d8cdb;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>Green City Simulator</h1>
+        <p>Le jeu de société collaboratif du développement durable</p>
+    </header>
+
+    <nav class="navbar">
+        <a href="index.html">Accueil</a>
+        <a href="about.html">À Propos du Jeu</a>
+        <a href="how-to-play.html">Comment Jouer</a>
+        <a href="buy.html">Acheter</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="hero-banner">
+        <!-- L'image de la ville est ici en fond via CSS -->
+    </div>
+
+    <div class="container">
+        <h2>Bienvenue dans Green City Simulator !</h2>
+        <p>Plongez dans un jeu de société unique où la collaboration est la clé pour construire une ville durable et prospère. Conçu pour les familles et les éducateurs (collège/lycée), Green City Simulator vous invite à relever des défis environnementaux, sociaux et économiques ensemble.</p>
+        <p>Votre mission : transformer votre ville en un modèle de développement durable, en gérant les ressources, en prenant des décisions stratégiques et en anticipant les aléas. Chaque choix compte, et le succès de votre ville dépendra de votre capacité à travailler en équipe.</p>
+        <p>Explorez les différentes facettes du développement durable à travers des décisions impactantes et découvrez comment vos choix influencent l'économie, la cohésion sociale et la santé environnementale de votre ville. Prêt(e) à construire la ville de demain ?</p>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="about.html" class="button">Découvrir le Jeu</a>
+            <a href="how-to-play.html" class="button">Comment Jouer</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2023 Green City Simulator. Tous droits réservés.</p>
+        <p>Fait avec passion par l'équipe de Green City Simulator.</p>
+    </footer>
+
+</body>
+</html>
