@@ -317,17 +317,18 @@
 </head>
 <body>
 
-    <!-- NAVIGATION -->
-    <nav class="navbar">
-        <div class="logo">🌿 Green City Simulator</div>
-        <div class="nav-links">
-            <a href="#home">Accueil</a>
-            <a href="#about">L'Équipe</a>
-            <a href="#rules">Règles</a>
-            <a href="#buy">Boutique</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+<!-- NOUVELLE NAVIGATION -->
+<nav class="navbar">
+    <div class="logo">🌿 Green City Simulator</div>
+    <div class="nav-links">
+        <a href="#home">Accueil</a>
+        <a href="#about">Le Jeu</a>
+        <a href="#team">L'Équipe</a>
+        <a href="#rules">Règles</a>
+        <a href="#buy">Boutique</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
 
     <!-- HERO SECTION -->
     <section id="home" class="hero">
@@ -339,45 +340,102 @@
         </div>
     </section>
 
-    <!-- À PROPOS & ÉQUIPE -->
-    <section id="about">
-        <h2 class="section-title">Notre Mission</h2>
-        <div class="about-grid">
-            <div class="about-text">
-                <p><strong>Green City Simulator</strong> est né d'une volonté simple : rendre le développement durable ludique et accessible. Conçu pour les familles, les collèges et les lycées, ce jeu vous place aux commandes d'un conseil municipal en plein essor.</p>
-                <br>
-                <p>Il ne s'agit pas de gagner seul, mais de réussir ensemble. Chaque décision impacte l'économie, le social et l'environnement. Trouverez-vous l'équilibre ?</p>
-            </div>
-            <div class="about-image">
-                <!-- Image placeholder, tu pourras la remplacer par une photo du plateau -->
-                <img src="https://placehold.co/600x400/81C784/ffffff?text=Plateau+de+Jeu" alt="Plateau de jeu" style="width:100%; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1);">
-            </div>
-        </div>
+  Excellent point. Tu as tout à fait raison, c'est illogique que "L'équipe" mène à "Notre Mission". C'est le genre de détail qui fait toute la différence pour l'expérience utilisateur.
 
-        <!-- SECTION ÉQUIPE -->
-        <h3 style="text-align:center; margin-top:60px; font-size:1.8rem;">L'Équipe de Développement</h3>
-        <div class="team-container">
-            <div class="team-member">
-                <div class="avatar avatar-1"></div>
-                <h4>Alexandre</h4>
-                <p style="color:var(--primary);">Game Designer</p>
-                <p style="font-size:0.9rem;">L'architecte des règles et de l'équilibre du jeu.</p>
-            </div>
-            <div class="team-member">
-                <div class="avatar avatar-2"></div>
-                <h4>Sarah</h4>
-                <p style="color:var(--primary);">Experte RSE</p>
-                <p style="font-size:0.9rem;">Garante de la réalité scientifique des cartes.</p>
-            </div>
-            <div class="team-member">
-                <div class="avatar avatar-3"></div>
-                <h4>Léo</h4>
-                <p style="color:var(--primary);">Illustrateur</p>
-                <p style="font-size:0.9rem;">Celui qui donne vie à la ville verte.</p>
-            </div>
-        </div>
-    </section>
+Plutôt que de simplement renommer le bouton, je te propose une meilleure solution qui rendra le site beaucoup plus clair et professionnel : nous allons séparer les deux sujets en deux sections distinctes.
 
+Comme ça, tu auras :
+
+Une section "Le Jeu" qui présentera la mission et le concept.
+
+Une section "L'Équipe" juste en dessous, qui présentera les développeurs.
+
+Chaque bouton dans la navigation mènera alors exactement au bon endroit.
+
+Action : Diviser la section et mettre à jour la navigation
+
+Tu n'as qu'une seule modification à faire dans ton fichier index.html.
+
+Ouvre ton fichier index.html en mode édition sur GitHub.
+
+Remplace la barre de navigation (le bloc <nav>...</nav>) par celle-ci pour inclure les deux liens distincts :
+
+code
+Html
+download
+content_copy
+expand_less
+<!-- NOUVELLE NAVIGATION -->
+<nav class="navbar">
+    <div class="logo">🌿 Green City Simulator</div>
+    <div class="nav-links">
+        <a href="#home">Accueil</a>
+        <a href="#about">Le Jeu</a>
+        <a href="#team">L'Équipe</a>
+        <a href="#rules">Règles</a>
+        <a href="#buy">Boutique</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+Ensuite, trouve la section "Notre Mission" (elle commence par <section id="about">). Supprime toute cette section et remplace-la par les deux nouvelles sections ci-dessous :
+
+code
+Html
+play_circle
+download
+content_copy
+expand_less
+<!-- DEUX NOUVELLES SECTIONS (remplacent l'ancienne section "about") -->
+
+<!-- SECTION 1 : À PROPOS DU JEU -->
+<section id="about">
+    <h2 class="section-title">Le Concept</h2>
+    <div class="about-grid">
+        <div class="about-text">
+            <p><strong>Green City Simulator</strong> est né d'une volonté simple : rendre le développement durable ludique et accessible. Conçu pour les familles, les collèges et les lycées, ce jeu vous place aux commandes d'un conseil municipal en plein essor.</p>
+            <br>
+            <p>Il ne s'agit pas de gagner seul, mais de réussir ensemble. Chaque décision impacte l'économie, le social et l'environnement. Trouverez-vous l'équilibre ?</p>
+        </div>
+        <div class="about-image">
+            <!-- Image placeholder, tu pourras la remplacer par une photo du plateau -->
+            <img src="https://placehold.co/600x400/81C784/ffffff?text=Le+Plateau+de+Jeu" alt="Plateau de jeu" style="width:100%; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 2 : L'ÉQUIPE -->
+<section id="team" style="background-color: var(--white);">
+    <h2 class="section-title">L'Équipe de Développement</h2>
+    <div class="team-container">
+        <div class="team-member">
+            <div class="avatar avatar-1"></div>
+            <h4>Alexandre</h4>
+            <p style="color:var(--primary);">Game Designer</p>
+            <p style="font-size:0.9rem;">L'architecte des règles et de l'équilibre du jeu.</p>
+        </div>
+        <div class="team-member">
+            <div class="avatar avatar-2"></div>
+            <h4>Sarah</h4>
+            <p style="color:var(--primary);">Experte RSE</p>
+            <p style="font-size:0.9rem;">Garante de la réalité scientifique des cartes.</p>
+        </div>
+        <div class="team-member">
+            <div class="avatar avatar-3"></div>
+            <h4>Léo</h4>
+            <p style="color:var(--primary);">Illustrateur</p>
+            <p style="font-size:0.9rem;">Celui qui donne vie à la ville verte.</p>
+        </div>
+    </div>
+</section>
+
+En résumé, les changements sont :
+
+La barre de navigation a maintenant un lien "Le Jeu" (#about) et "L'Équipe" (#team).
+
+L'ancienne section "Notre Mission" est remplacée par deux nouvelles sections avec les bons id.
+
+Fais ces modifications, committe-les, et dis-moi ce que tu en penses ! La navigation devrait être beaucoup plus logique maintenant.
     <!-- RÈGLES DU JEU (OCR INTÉGRÉ) -->
     <section id="rules" style="background-color: #e8f5e9;">
         <h2 class="section-title">Comment Jouer ?</h2>
