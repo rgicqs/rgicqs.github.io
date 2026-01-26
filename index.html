@@ -165,17 +165,17 @@
         .avatar {
             width: 120px;
             height: 120px;
-            background-color: #f0f0f0;
-            border-radius: 50%;
+            background-color: #ffffff;
+            border-radius: 50%; /* Ça transforme le carré en rond */
             margin: 0 auto 15px;
             
-            /* C'EST ICI QUE LA MAGIE OPÈRE : */
-            background-size: 180%; /* On zoome un peu pour remplir le cercle */
-            background-position: top center; /* On aligne sur le HAUT (le visage) et non le centre */
+            /* REGLAGE OPTIMAL POUR IMAGES CARRÉES */
+            background-size: cover; 
+            background-position: center; /* Centre parfaitement */
             background-repeat: no-repeat;
             
-            border: 4px solid var(--accent);
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.1); /* Petite ombre intérieure pour le style */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
         }
 
         /* On lie tes images locales */
