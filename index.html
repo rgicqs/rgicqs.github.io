@@ -192,91 +192,88 @@
         }
         .gauge-item { flex: 1; text-align: center; font-weight: bold; }
 
-        /* --- BOUTIQUE (DESIGN PRODUIT) --- */
-        .shop-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 50px;
+        /* --- BOUTIQUE (NOUVEAU DESIGN 2 PRODUITS) --- */
+        .shop-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .product-card {
             background: var(--white);
-            padding: 40px;
+            padding: 30px;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
-        }
-
-        .product-image {
-            flex: 1;
-            min-width: 300px;
             text-align: center;
+            transition: transform 0.3s;
+            border: 1px solid transparent;
         }
 
-        .product-image img {
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .product-card img {
             width: 100%;
-            max-width: 450px;
+            height: 250px;
+            object-fit: contain; /* Garde l'image entière sans couper */
             border-radius: 10px;
-            transition: transform 0.3s ease;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-        }
-
-        .product-image img:hover {
-            transform: scale(1.05) rotate(-2deg);
-        }
-
-        .product-details {
-            flex: 1;
-            min-width: 300px;
+            margin-bottom: 20px;
         }
 
         .product-title {
-            font-size: 2rem;
+            font-size: 1.5rem;
             margin-bottom: 10px;
             color: var(--primary-dark);
         }
 
         .product-price {
-            font-size: 2.2rem;
+            font-size: 2rem;
             color: var(--wood);
             font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .free-price {
+            color: var(--primary);
+        }
+
+        .product-desc {
+            font-size: 0.95rem;
+            color: #666;
             margin-bottom: 20px;
-        }
-
-        .product-features {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .feature-badge {
-            background: var(--bg-light);
-            border: 1px solid var(--primary);
-            color: var(--primary-dark);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
+            min-height: 60px;
         }
 
         .buy-btn {
-            display: inline-block;
-            background: #FF9800; /* Orange pour l'achat */
+            display: block;
+            background: #FF9800;
             color: white;
-            padding: 15px 40px;
-            font-size: 1.2rem;
+            padding: 12px;
             font-weight: bold;
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(255, 152, 0, 0.4);
-            transition: 0.3s;
             width: 100%;
-            text-align: center;
+            transition: 0.3s;
         }
 
-        .buy-btn:hover {
-            background: #F57C00;
-            transform: translateY(-3px);
+        .buy-btn:hover { background: #F57C00; }
+
+        .download-btn {
+            display: block;
+            background: var(--primary);
+            color: white;
+            padding: 12px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            width: 100%;
+            transition: 0.3s;
         }
+
+        .download-btn:hover { background: var(--primary-dark); }
 
         /* --- CONTACT --- */
         .contact-form {
@@ -299,9 +296,7 @@
         /* --- MOBILE --- */
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .about-grid { grid-template-columns: 1fr; }
-            .shop-container { flex-direction: column; text-align: center; }
-            .product-features { justify-content: center; }
+            .about-grid, .shop-grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.5rem; }
             .gauges-info { flex-direction: column; }
         }
@@ -379,74 +374,67 @@
     <section id="rules" style="background-color: #e8f5e9;">
         <h2 class="section-title">Comment Jouer ?</h2>
         <div class="rules-container">
-            
             <div class="rule-block">
                 <h3>🎯 But du Jeu</h3>
                 <p>L'objectif est de réaliser <strong>10 PROJETS</strong> tout en maintenant l'équilibre durable de votre ville. Vous devez gérer trois jauges (Économie, Social, Environnement) et faire prospérer votre ville pour atteindre la "Zone Verte".</p>
             </div>
-
             <div class="rule-block">
                 <h3>🎲 Le Matériel</h3>
-                <p>Le plateau comporte des cases <strong>PROJET</strong>, <strong>ALÉA</strong>, et <strong>NEUTRE</strong>. 
-                Deux cases spéciales : <em>DÉPART</em> et <em>SUPER ALÉA</em> (9ème case).</p>
-                
+                <p>Le plateau comporte des cases <strong>PROJET</strong>, <strong>ALÉA</strong>, et <strong>NEUTRE</strong>. Deux cases spéciales : <em>DÉPART</em> et <em>SUPER ALÉA</em> (9ème case).</p>
                 <div class="gauges-info">
                     <div class="gauge-item" style="color:#FBC02D;">💰 Jauge Économie</div>
                     <div class="gauge-item" style="color:#e53935;">❤️ Jauge Social</div>
                     <div class="gauge-item" style="color:#43A047;">🌳 Jauge Environnement</div>
                 </div>
-                <p><em>Au début du jeu, les 3 jauges sont initialisées à 12.</em></p>
             </div>
-
+            <div class="rule-block">
+                <h3>🏗️ Les Projets</h3>
+                <p>Lorsqu'une carte « Projet » est piochée, le conseil municipal (les joueurs) débat :
+                <ul>
+                    <li>✅ <strong>Construire :</strong> Payez le coût et ajustez les jauges (Impact positif/négatif).</li>
+                    <li>❌ <strong>Refuser :</strong> Le joueur actif défausse une carte.</li>
+                </ul>
+                En cas de désaccord, c'est le joueur qui a le dé qui tranche !</p>
+            </div>
             <div class="rule-block">
                 <h3>⚡ Les Aléas</h3>
                 <p>Les cartes ALÉA déclenchent des événements imprévus qui impactent vos jauges. La gravité dépend du hasard ou de vos infrastructures : <strong>vos constructions passées peuvent vous protéger ou vous exposer.</strong></p>
-                
-                <!-- Bloc visuel pour le Super Aléa -->
                 <div style="background-color: #fff3e0; border-left: 5px solid #ff9800; padding: 15px; margin-top: 15px; border-radius: 5px;">
                     <strong>⚠️ LE SUPER ALÉA :</strong> Franchir la 9ème case déclenche <em>obligatoirement</em> une carte. La tension reste constante jusqu'au bout !
                 </div>
             </div>
-
             <div class="rule-block">
                 <h3>🏁 Fin de Partie</h3>
                 <p>🔴 <strong>Défaite :</strong> Si l'une des 3 jauges tombe à ZÉRO.</p>
                 <p>🟢 <strong>Victoire :</strong> Si les 10 projets sont construits ET qu'aucune jauge n'est dans le rouge.</p>
             </div>
-
         </div>
     </section>
 
-    <!-- BOUTIQUE (MISE À JOUR) -->
+    <!-- BOUTIQUE AVEC PRINT & PLAY -->
     <section id="buy">
-        <h2 class="section-title">Commander le Jeu</h2>
+        <h2 class="section-title">La Boutique</h2>
         
-        <div class="shop-container">
-            <div class="product-image">
-                <!-- Assure-toi que ton image s'appelle bien box.png -->
-                <img src="box.png" alt="Boîte de Jeu Green City Simulator">
-            </div>
-            
-            <div class="product-details">
-                <h3 class="product-title">Projet : Ville Durable</h3>
+        <div class="shop-grid">
+            <!-- PRODUIT 1 : BOITE PHYSIQUE -->
+            <div class="product-card">
+                <img src="box.png" alt="Boîte de Jeu Green City">
+                <h3 class="product-title">Édition Complète</h3>
                 <div class="product-price">19,99 €</div>
+                <p class="product-desc">La boîte de jeu complète avec plateau premium, 45 cartes, pions en bois et dés.</p>
+                <button class="buy-btn" onclick="alert('Précommandes bientôt ouvertes !')">Précommander</button>
+            </div>
+
+            <!-- PRODUIT 2 : PRINT & PLAY -->
+            <div class="product-card" style="border: 2px dashed var(--primary);">
+                <!-- Assure-toi d'avoir l'image print-play.png -->
+                <img src="print-play.png" alt="Kit à imprimer">
+                <h3 class="product-title">Kit Créateur (DIY)</h3>
+                <div class="product-price free-price">Gratuit</div>
+                <p class="product-desc">Téléchargez les PDF (Cartes vierges, Plateau, Règles) pour imprimer et créer votre propre version.</p>
                 
-                <div class="product-features">
-                    <span class="feature-badge">👥 2-6 Joueurs</span>
-                    <span class="feature-badge">🎂 10+ Ans</span>
-                    <span class="feature-badge">⏱️ 30 Min</span>
-                </div>
-
-                <p>Plongez dans la simulation ultime de gestion urbaine durable. Coopérez, débattez et construisez ensemble la ville de demain tout en gérant les imprévus climatiques et sociaux.</p>
-                <br>
-                <ul style="list-style: disc; margin-left: 20px; margin-bottom: 20px; color: #555;">
-                    <li>Plateau de jeu immersif</li>
-                    <li>45 Cartes Projets & 25 Cartes Aléas</li>
-                    <li>Mécanique 100% collaborative</li>
-                    <li>Fabriqué en France 🇫🇷 (Éco-conçu)</li>
-                </ul>
-
-                <button class="buy-btn" onclick="alert('Bientôt disponible ! Inscrivez-vous à la newsletter pour être prévenu.')">Ajouter au Panier</button>
+                <!-- Lien de téléchargement (remplace le # par ton lien PDF plus tard) -->
+                <a href="#" class="download-btn" onclick="alert('Le téléchargement débutera bientôt !')">📄 Télécharger le Kit</a>
             </div>
         </div>
     </section>
@@ -458,13 +446,10 @@
             <form>
                 <label>Nom</label>
                 <input type="text" placeholder="Votre nom">
-                
                 <label>Email</label>
                 <input type="email" placeholder="Votre email">
-                
                 <label>Message</label>
                 <textarea rows="5" placeholder="Votre message pour l'équipe..."></textarea>
-                
                 <button type="submit" class="submit-btn">Envoyer</button>
             </form>
         </div>
