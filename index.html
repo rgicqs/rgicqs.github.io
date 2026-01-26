@@ -163,16 +163,23 @@
         }
         .team-member:hover { transform: translateY(-10px); }
         .avatar {
-            width: 120px; height: 120px;
-            background-color: #ddd;
+            width: 120px;
+            height: 120px;
+            background-color: #f0f0f0;
             border-radius: 50%;
             margin: 0 auto 15px;
-            background-size: cover;
-            background-position: center;
+            
+            /* C'EST ICI QUE LA MAGIE OPÈRE : */
+            background-size: 180%; /* On zoome un peu pour remplir le cercle */
+            background-position: top center; /* On aligne sur le HAUT (le visage) et non le centre */
+            background-repeat: no-repeat;
+            
             border: 4px solid var(--accent);
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.1); /* Petite ombre intérieure pour le style */
         }
-        /* Tes Avatars Personnalisés */
-        .avatar-1 { background-image: url('avatar1.png'); } /* Remplace .png par .jpg si nécessaire */
+
+        /* On lie tes images locales */
+        .avatar-1 { background-image: url('avatar1.png'); }
         .avatar-2 { background-image: url('avatar2.png'); }
         .avatar-3 { background-image: url('avatar3.png'); }
 
