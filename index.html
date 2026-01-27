@@ -151,6 +151,22 @@
             border-radius:15px; 
             box-shadow:0 5px 15px rgba(0,0,0,0.1);
         }
+        
+        /* --- VIDÉO --- */
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            border: 4px solid var(--white);
+        }
+        
+        video {
+            width: 100%;
+            height: auto;
+            display: block; /* Enlève la petite marge blanche en bas */
+        }
 
         /* --- L'ÉQUIPE (AVATARS) --- */
         .team-container {
@@ -318,6 +334,25 @@
                 <img src="concept-art.png" alt="Le jeu prend vie">
             </div>
         </div>
+    </section>
+
+    <!-- VIDÉO TRAILER -->
+    <section id="video" style="background-color: var(--primary); color: var(--white);">
+        <h2 class="section-title" style="color: var(--white);">Découvrez le Trailer</h2>
+        <!-- On force la barre blanche du titre à devenir blanche pour cette section -->
+        <style> #video .section-title::after { background: var(--white); } </style>
+        
+        <div class="video-container">
+            <!-- poster="hero-banner.png" affiche une image avant que la vidéo ne démarre -->
+            <video controls poster="hero-banner.png">
+                <source src="trailer.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la lecture de vidéos.
+            </video>
+        </div>
+        
+        <p style="text-align:center; margin-top:20px; font-size:1.1rem;">
+            Plongez dans l'ambiance du jeu et découvrez les mécaniques en action.
+        </p>
     </section>
 
     <!-- L'ÉQUIPE -->
